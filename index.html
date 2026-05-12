@@ -1,4 +1,4 @@
-<!DOCTYPE index.html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -33,15 +33,6 @@
   .header-right { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .print-btn { background: var(--surface); border: 1px solid var(--border-strong); color: var(--text-secondary); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 7px 16px; border-radius: var(--radius); cursor: pointer; display: flex; align-items: center; gap: 6px; }
   .print-btn:hover { background: var(--surface2); }
-  .nav-btn { background: var(--wvi-orange); border: none; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: var(--radius); cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; }
-  .nav-btn:hover { background: #CF6A1A; }
-
-  .period-nav { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 16px; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; font-size: 13px; flex-wrap: wrap; }
-  .period-nav-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin-right: 4px; }
-  .period-pill { font-size: 12px; padding: 4px 14px; border-radius: 99px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-secondary); text-decoration: none; cursor: default; }
-  .period-pill.active { background: var(--wvi-blue); border-color: var(--wvi-blue); color: #fff; font-weight: 500; }
-  .period-pill.link { cursor: pointer; }
-  .period-pill.link:hover { background: var(--surface2); }
 
   .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.25rem; }
   .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.1rem 1.25rem; }
@@ -129,18 +120,12 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
         Print / Save PDF
       </button>
-      <a id="p7-link" class="nav-btn" href="#" style="display:none">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        Period 7
+      <a href="https://wvi365.sharepoint.com/sites/PHLO-FINANCE18/SitePages/WVDF-MONTH-END-KEYDATES.aspx" target="_blank" rel="noopener" style="background:var(--wvi-blue);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:7px 16px;border-radius:var(--radius);display:inline-flex;align-items:center;gap:6px;text-decoration:none;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Keydates Website
       </a>
     </div>
   </header>
-
-  <div class="period-nav">
-    <span class="period-nav-label">Period</span>
-    <span class="period-pill active">P6 · Mar–Apr 2026</span>
-    <a id="p7-pill" class="period-pill link" href="#" style="display:none">P7 · Apr–May 2026 →</a>
-  </div>
 
   <div class="all-done-banner">
     ✅ All Period 6 tasks have been completed!
@@ -179,16 +164,6 @@
 </div>
 
 <script>
-// Inject P7 link if provided via URL param ?p7=https://...
-const params = new URLSearchParams(window.location.search);
-const p7url = params.get('p7');
-if(p7url) {
-  document.getElementById('p7-link').href = p7url;
-  document.getElementById('p7-link').style.display = 'flex';
-  document.getElementById('p7-pill').href = p7url;
-  document.getElementById('p7-pill').style.display = 'inline-block';
-}
-
 const tasks = [
   {status:'Completed',name:'Last day to send billing invoice for bank debit',owner:'SFOs_PHLO',wd:-4,due:'Mar 26',dueDate:'2026-03-26',day:'Thursday',cut:'3PM',comment:''},
   {status:'Completed',name:'Pre-run of Aging Report',owner:'SSC-PH',wd:-3,due:'Mar 27',dueDate:'2026-03-27',day:'Friday',cut:'5PM',comment:''},
